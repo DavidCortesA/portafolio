@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+$color-one: #1c1c1c;
+$color-two: #EEA302;
+$bgColor: #F3F3F3;
+$fontFamily:'Lora', serif;
+$fontSizeP: 1.2rem;
+$fontSizeT: 1.4rem;
+$breakpointMobile: 768px;
+
+@mixin dFlex ($justifyContent: center, $alignItems: center, $flexDirection: column,  $gap: 0){
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+  gap: $gap;
+};

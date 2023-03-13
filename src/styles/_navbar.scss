@@ -1,0 +1,26 @@
+@import "./variables";
+
+.menu{
+  @include dFlex($flexDirection:row, $justifyContent:space-between);
+  padding: 1em 5em;
+  &__toggle{
+    display: none;
+  }
+  &__logo{
+    width: 13rem;
+  }
+  &__opcions{
+    @include dFlex($flexDirection:row, $gap: 3rem);
+    &--opcion{
+      list-style: none;
+      a{
+        text-decoration: none;
+        color: $color-one;
+        font-size: $fontSizeP;
+        &:hover{
+          color: $color-two;
+        }
+      }
+    }
+  }
+}

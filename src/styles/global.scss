@@ -1,0 +1,14 @@
+@import './navbar';
+@import './home';
+@import './footer';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bgColor;
+  font-family: $fontFamily;
+}

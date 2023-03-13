@@ -1,0 +1,20 @@
+.footer{
+  @include dFlex($flexDirection: row,$justifyContent:space-around, $alignItems:flex-start);
+  border-top: solid 1px $color-one;
+  margin: 0 5em;
+  padding: 2em 0;
+  &__container{
+    @include dFlex($alignItems:flex-start, $gap: 1rem);
+    &--title{
+      font-size: $fontSizeT;
+    }
+    &--link{
+      text-decoration: none;
+      color: $color-one;
+      font-size: $fontSizeP;
+      &:hover{
+        color: $color-two;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "./variables";
+
+.home{
+  width: 100%;
+  height: 100vh;
+  @include dFlex($flexDirection: row, $gap:2em);
+  &__image{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+  }
+  &__container{
+    @include dFlex($alignItems: flex-start, $gap:2rem);
+    width: 600px;
+    line-height: 1.6em;
+    &--title{
+      font-size: 2.5rem;
+    }
+    &--text{
+      font-size: $fontSizeP;
+
+    }
+    &--links{
+      @include dFlex($flexDirection: row, $gap:1rem);
+      text-decoration: none;
+      .link{
+        background-color: $color-two;
+        color: $color-one;
+        border: 1px solid $color-one;
+        text-decoration: none;
+        font-size: $fontSizeP;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        &:nth-child(2){
+          background-color: rgb(255,59,37);
+        }
+        &:nth-child(3){
+          background-color: rgb(128,216,218);
+        }
+        &:hover{
+          background-color: $bgColor;
+        }
+      }
+    }
+  }
+}
