@@ -3,27 +3,38 @@ import { NavLink } from 'react-router-dom';
 import LogoN from '../image/LogoN.png'
 
 const Navbar = () => {
-  const [ showMenu, setShowMenu ] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  }
-
+  const btnExpanded = () => {
+    setExpanded(!expanded)
+  };
+  
   return (
-    <nav className={`menu ${showMenu ? 'menu--responsive' : ''}`}>
-      <button className='menu__toggle' onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <NavLink to='/'>
-        <img src={LogoN} alt="davidcortesa" className='menu__logo'/>
+    <nav className='menu'>
+      <NavLink to="/" className="menu__logo">
+        <img src={LogoN} alt="" />
       </NavLink>
-      <ul className='menu__opcions'>
-        <li className='menu__opcions--opcion'><NavLink to='/curriculum'>Currículum</NavLink></li>
-        <li className='menu__opcions--opcion'><NavLink to='/proyectos'>Proyectos</NavLink></li>
-        <li className='menu__opcions--opcion'><NavLink to='/contacto'>Contacto</NavLink></li>
-      </ul>
+      <button className="menu__hamburger" onClick={btnExpanded}>
+        <svg 
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+          >
+        <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+            />
+        </svg>
+      </button>
+      <div className={expanded ? "menu__navegation expanded" : "menu__navegation" }>
+        <ul>
+          <li className='menu__navegation--option' onClick={btnExpanded}><NavLink to="/curriculum">Curriculum</NavLink></li>
+          <li className='menu__navegation--option' onClick={btnExpanded}><NavLink to="/proyectos">Proyectos</NavLink></li>
+          <li className='menu__navegation--option' onClick={btnExpanded}><NavLink to="/contacto">Contacto</NavLink></li>
+        </ul>
+      </div>
     </nav>
   )
 }

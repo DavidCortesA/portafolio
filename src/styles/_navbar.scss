@@ -8,10 +8,16 @@
   }
   &__logo{
     width: 13rem;
+    img{
+      width: 10rem;
+    }
   }
-  &__opcions{
-    @include dFlex($flexDirection:row, $gap: 3rem);
-    &--opcion{
+  &__navegation{
+    margin: 0 1rem;
+    ul{
+      @include dFlex($flexDirection:row, $gap: 3rem);
+    }
+    &--option{
       list-style: none;
       a{
         text-decoration: none;
@@ -22,5 +28,55 @@
         }
       }
     }
+  }
+  &__hamburger{
+    border: 0;
+    height: 40px;
+    width: 40px;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: $color-one;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    position: absolute;
+    top: 10%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+    &:hover{
+      background-color: $color-two;
+    }
+  }
+}
+
+@media screen and (max-width:$breakpointMobile) {
+  .menu{
+    padding: 2rem;
+    &__navegation{
+      display: none;
+      ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 77px);
+        background-color: $bgColor;
+        li{
+          text-align: center;
+          margin: 0;
+          a{
+            width: 100%;
+            padding: 1.5rem 0;
+          }
+        }
+      }
+    }
+    &__hamburger{
+      display: block;
+    }
+  }
+  .expanded {
+    display: block;
   }
 }
